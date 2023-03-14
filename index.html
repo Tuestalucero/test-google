@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+
+        body
+        {
+            background-color: white
+        }
+
+        #barra
+        {
+            background-color: #6f42c1;
+        }
+        
+        .modal-content
+        {
+            background-color: #c1a9eed2;
+        }
+
+        #body-tarjeta
+        {
+          background-color: #5bbfd3a8;
+        }
+
+        .carousel-item 
+        {
+          height: 36rem;
+        }
+
+        .carousel-item img
+        {
+          height: 36rem;
+        }
+
+        #contenido_secundario
+        {
+          background-image: url("https://img1.wallspic.com/crops/5/9/7/4/6/164795/164795-morado-petalo-violeta-rosa-dedo-3840x2160.png");
+          right: 0px;
+
+        }
+
+        #btn-task-form
+        {
+          background-color: #6f42c1;
+        }
+
+        #titulo_card
+        {
+          color: #4a16aa;
+        }
+
+        #posts
+        {
+          height: 620px;
+        }
+
+        #subtitulo
+        {
+          color:#ad8ee7
+        }
+
+        .prueba_ca form 
+        {
+          width: 250px;
+          margin: 0 auto;
+          height: 50px;
+        }
+
+        .prueba_ca form p 
+        {
+          text-align: center;
+        }
+
+        .prueba_ca form label 
+        {
+          font-size: 20px;
+        }
+
+        .prueba_ca input[type="radio"] 
+        {
+          display: none;
+        }
+
+        .prueba_ca label 
+        {
+          color: grey;
+        }
+
+        .clasificacion 
+        {
+          direction: rtl;
+          unicode-bidi: bidi-override;
+        }
+
+        .prueba_ca label:hover,
+        label:hover ~ label 
+        {
+          color: #0aaccc;
+        }
+
+        .prueba_ca input[type="radio"]:checked ~ label {
+          color: #0aaccc;
+        }
+
+        #fondo_card
+        {
+          background-color: rgba(60, 2, 66, 0.966);
+          color:white
+        }
+
+        #boton_borrar
+        {
+          background-color: rgb(3, 201, 151);
+        }
+    </style>
+</head>
+
+<body class="m-0 p-0">
+    <!--PLANTILLA DE BARRA DE NAVEGACIÓN-->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="barra">
+        <div class="container-fluid">
+          <img src="https://images.vexels.com/media/users/3/142911/isolated/preview/2112bff2f935dd522b5d1b2d082cd045-logotipo-de-playa-isla-paisaje.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+          <a class="navbar-brand fs-4 text-center" href="#">World Experience</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+
+
+              <a class="nav-link logged-out" href="#" id="google">Google</a>
+
+
+              <a class="nav-link active logged-out" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#unirse">Iniciar sesión</a>
+              <a class="nav-link logged-out" href="#" data-bs-toggle="modal" data-bs-target="#unirse2">Registrarse</a>
+              <a class="nav-link logged-in" href="#" id="logout">Salir</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+    <!--PLANTILLA DE MODAL 1-->
+    <div class="modal" tabindex="-1" id="unirse">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Iniciar sesión</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <!--Formulario-->
+                <form id="iniciar">
+                    <label for="email">Email:</label>
+                    <input type="text" id="correo_inicio" class="form-control mb-3" placeholder="Correo" required>
+  
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password_inicio" class="form-control mb-3" placeholder="Contraseña" required>
+  
+                    <button type="submit" class="btn btn-info d-grid gap-1 col-6 mx-auto">Guardar cambios</button>
+                  </form>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!--PLANTILLA DE MODAL 2-->
+    <div class="modal" tabindex="-1" id="unirse2">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Registrarse</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+            <!--Formulario--> 
+            <form id="registrar">
+                          
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">Nombres</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">Apellidos</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                  </div>
+                </div>
+
+                <label for="email">Email:</label>
+                <input type="text" id="registrar-email" class="form-control mb-3" placeholder="Correo" required>
+
+                <label for="password">Contraseña:</label>
+                <input type="password" id="registrar-password" class="form-control mb-3" placeholder="Contraseña" required>
+                  
+        
+          
+              <div class="row g-3">
+               <label for="country" class="form-label">Fecha de Nacimiento</label>
+                <div class="col-sm-3 mt-0">
+                <label for="country" class="form-label">Día</label>
+                <select class="form-select" id="country" required>
+                <option value="">1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+                <option>23</option>
+                <option>24</option>
+                <option>25</option>
+                <option>26</option>
+                <option>27</option>
+                <option>28</option>
+                <option>29</option>
+                <option>30</option>
+                <option>31</option>
+                </select>
+                </div>
+    
+          <div class="col-sm-3 mt-0">
+            <label for="state" class="form-label">Mes</label>
+            <select class="form-select" id="state" required>
+              <option value="">Enero</option>
+              <option>Febrero</option>
+              <option>Marzo</option>
+              <option>Abril</option>
+              <option>Mayo</option>
+              <option>Junio</option>
+              <option>Julio</option>
+              <option>Agosto</option>
+              <option>Septiembre</option>
+              <option>Octubre</option>
+              <option>Noviembre</option>
+              <option>Diciembre</option>
+            </select>
+          </div>
+
+          <div class="col-md-3 mt-0">
+            <label for="zip" class="form-label">Año</label>
+            <input type="text" class="form-control" id="zip" required>
+          </div>
+        </div>
+        <br>
+
+              <button type="submit" class="btn btn-primary d-grid gap-1 col-6 mx-auto">Iniciar</button>
+            </form>
+
+        </div>
+            <div class="modal-footer">
+              <p class="container text-center">Tus datos personales no serán compartidos con terceros.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+<div class="logged-out" id="contenido_pri">
+      <!--CARRUSEL INICIO-->
+      <div id="carruseli" class="container text-center">
+       <div id="carouselExampleCaptions" class="carousel slide text-center">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://images.pexels.com/photos/4275971/pexels-photo-4275971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <p class="fs-4 fw-bold text-dark">¿Buscas conocer lugares nuevos?</p>
+              <p class="fs-4 fw-bold text-dark">¿Estás planeando tu próximo viaje pero no sabes a dónde ir?</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/4342427/pexels-photo-4342427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <p class="fs-4 fw-bold text-dark">Unete a "World Experience" y encuentra reseñas de miles de usuarios acerca de las experiencias de sus viajes.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/6057872/pexels-photo-6057872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <p class="fs-4 fw-bold">Conéctate con personas del todo el mundo y mira sus posts, o comparte tus experiencias personales de viajes.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/853151/pexels-photo-853151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <p class="fs-4 fw-bold">¡Conoce el mundo desde la comodidad de tu casa!</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div> 
+      </div>
+
+      <!--CARD-->
+      <div class="container px-4 py-5" id="custom-cards">
+        <h2 class="pb-2 border-bottom">Descubre lo que puedes hacer</h2>
+    
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://images.pexels.com/photos/3943951/pexels-photo-3943951.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Chatea con tus amigos</h3>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://images.pexels.com/photos/3584999/pexels-photo-3584999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Comparte tus fotos</h3>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('https://blog.wearedrew.co/hubfs/buenas%20pr%C3%A1cticas%20en%20las%20rrss.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Interactúa con los posts de tus amigos y conocidos</h3>
+                <ul class="d-flex list-unstyled mt-auto">
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div> 
+
+<div id="contenido_secundario" class="logged-in pt-0">
+<div class="row">
+
+<!--COLLAGE-->
+<div class="col-md-5 col-xs-12 logged-in ">
+
+  <p id="subtitulo" class="fs-3 text-center  fw-light">Lugares con las mejores reseñas para visitar</p>
+
+    <div class="row featurette m-2 mt-4">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal fst-italic text-light lh-1">New York. <span class="fst-italic text-light text-opacity-75">"El mejor lugar del mundo".</span></h2>
+        <p class="lead text-light">"Al menos una vez en la vida hay que viajar a New York, es una ciudad especial y como la hemos visto en tantas películas, cuando la pisas por primera vez parece que ya habías estado allí antes"</p>
+      </div>
+      <div class="col-md-5">  
+        <img src="https://i.pinimg.com/736x/09/b3/05/09b305422ddb66ef7d845c8ab9f227df.jpg" class="img-fluid" height="500" width="800">
+      </div>
+       <span class="text-warning fst-italic text-opacity-75 ">¡Puedes puntuar este lugar!</span>       
+      <div class="prueba_ca">
+        <form>
+          <p class="clasificacion">
+          <input id="radio1" type="radio" name="estrellas" value="5"><!--
+          --><label for="radio1">★</label><!--
+          --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+          --><label for="radio2">★</label><!--
+          --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+          --><label for="radio3">★</label><!--
+          --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+          --><label for="radio4">★</label><!--
+          --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+          --><label for="radio5">★</label>
+          </p>
+          
+        </form>
+      </div>
+    </div>
+
+    <hr class="featurette-divider text-info">
+
+    <div class="row featurette m-2 mt-4">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal fst-italic text-light lh-1">Cataratas de Iguazú. <span class="fst-italic text-light text-opacity-75">"El lugar natural más increíble que he visitado".</span></h2>
+        <p class="lead text-light">"Sin duda las cataratas del Iguazú es uno de los lugares más mágicos que conocí en mi vida. Entre las cataratas y la selva misionera, te adentrás a la naturaleza pura"</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="https://thumbs.dreamstime.com/b/brazil-argentina-june-waterfalls-cataratas-foz-de-iguazu-vertical-167430075.jpg" class="img-fluid" height="500" width="800">      
+      </div>
+    </div>
+
+    <hr class="featurette-divider text-info">
+
+    <div class="row featurette m-2 mt-4">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal fst-italic text-light lh-1">Machu Picchu. <span class="fst-italic text-light text-opacity-75">"La estrella de Perú".</span></h2>
+        <p class="lead text-light">"Es realmente alucinante, mística, impresionante. El lugar es sencillamente increíble, no hay palabras para describirlo."</p>
+      </div>
+      <div class="col-md-5">
+        <img src="https://incaexpert.com/blog/wp-content/uploads/2020/07/machu-picchu-sunset-819x1024.jpg" class="img-fluid" height="500" width="800">      </div> 
+      </div>
+
+
+</div>
+
+
+<!--TARJETA-->
+  
+  <div id="publicaciones" class="col-md-7  col-xs-12  ms-auto">
+  <div class="container p-4 " id="tarjeta" >
+    <div class="row">
+      <div class="">
+        <div class="card" id="card2">
+          <div class="card-body" id="body-tarjeta">
+            <h1 class="h4 text-center" id="titulo_card">¡Relata tus experiencias de viajes!</h1>
+            <form id="task-form">
+              <label for="title" id="nombre_card">Título:</label>
+              <input
+                type="text"
+                id="task-title"
+                class="form-control mb-3"
+                autofocus>
+              <label for="description" id="descripcion_card">Tu historia:</label>
+              <textarea
+                id="task-description"
+                rows="3"
+                class="form-control mb-3"
+                placeholder="Siéntete libre de escribir aquí tus historias"
+              ></textarea>
+              <div class="d-flex align-items-center">
+                <button class="btn text-white" id="btn-task-form">Publicar</button>
+                <div id="cargar" class="spinner-border text-light ms-auto" role="status" aria-hidden="true"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr class="featurette-divider text-light">
+        <div id="posts" class="col overflow-auto">
+          <ul class="list-group text-break" id="tasks-container">
+          </ul>
+        </div>
+      </div>
+      <!-- Tasks List -->
+      <!--<div class="col-md-6" id="tasks-container"></div> -->
+    </div>
+  </div>
+  
+  <!--  fin de CRUD -->  
+    <div class="container p-4">
+      <div class="row ">
+        
+      </div>
+    </div>
+</div>
+
+
+</div>
+
+</div>
+       
+      <!--FOOTER-->
+      <div class="container">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+          </ul>
+          <p class="text-center text-muted">&copy; Todos los derechos reservados (2023)</p>
+        </footer>
+      </div>
+
+    <script>
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+      const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
+
+    <script type="module" src="./principal_js.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+</body>
+
+</html>
